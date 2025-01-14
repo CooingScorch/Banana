@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana</title>
+    <link rel="icon" type="image/x-icon" href="banana.gif">
+</head>
+<body>
+    <button id="button">Click Me</button>
+    <audio id="audio" loop>
+        <source src="pian.ogg" type="audio/ogg">
+        <source src="pian.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wrapper">
+        <h1 style="color: white; text-align: center; margin: 0;">Blow Out The Candle</h1>
+        <div class="content">
+            <div class="litContainer"> 
+                <img class="litImg" id= "lit"src="lit.gif">
+            </div>
+            <div class="layerContainer">
+                <img class="layerImg" src="layer.png">
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <style>
+        @font-face {
+            font-family: DansDisney;
+            src: url(DansDisney-3nJ8.ttf);
+        }
+        @keyframes loadIn{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        body{
+            background-color: black;
+            display: flex;
+            overflow: hidden;
+            margin-top: 3rem;
+            align-items: center;
+        }
+        .wrapper{
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            animation: 10s ease-out 0s 1 loadIn;
+            font-family: DansDisney;
+        }
+        #button{
+            background-color: lightgreen;
+            display: block;
+            padding: 1rem;
+            width: 15%;
+            margin: 45vh auto;
+            border: none;
+            border-radius: 5px;
+        }
+        #button:hover{
+            transition: 1s ease;
+            border-radius: 5px;
+            background-color: rgb(74, 122, 74);
+            color: white;
+        }
+        .content{
+            position: relative;
+        }
+        .layerImg{
+            position: absolute;
+            top: 5rem;
+            left: 0;
+            right:0;
+            z-index: 1;
+            margin:auto;
+        }
+        .litImg{
+            position: absolute;
+            top: -6rem;
+            left: 0rem;
+            right: 0;
+            margin: auto;
+            z-index: -1;
+        }
+        @media (max-width: 768px) { 
+            .layerImg, .litImg {
+                width: 18rem; 
+            }
+            .litImg{
+                top: 80%;
+            }
+        }
+    </style>
+    <script src="main.js"></script>
+
+</body>
+</html>
