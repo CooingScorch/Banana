@@ -17,7 +17,7 @@ class Processor extends AudioWorkletProcessor{
         const input = inputs[0];
         input.forEach((channel) => {
             for (let i =0; i<channel.length;i++ ){
-                if (Math.abs(channel[i])>=0.95 && this.n==0){
+                if (Math.abs(channel[i])>=1.0 && this.n==0){
                     console.log(channel[i]);
                     this.port.postMessage("banana");
                 }else if(this.n==-1){
